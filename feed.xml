@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 layout: none
 ---
@@ -26,5 +27,31 @@ layout: none
         {% endfor %}
       </item>
     {% endfor %}
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sensorario words</title>
+    <description>Do your best and then deal with the conseguences.</description>
+    <link>http://sensorario.github.io/</link>
+    <atom:link href="http://sensorario.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 19 Aug 2014 16:54:08 +0200</pubDate>
+    <lastBuildDate>Tue, 19 Aug 2014 16:54:08 +0200</lastBuildDate>
+    <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Title</title>
+        <description>&lt;h1 id=&quot;hello-world&quot;&gt;Hello World&lt;/h1&gt;
+
+&lt;p&gt;Mmmm!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 19 Aug 2014 00:00:00 +0200</pubDate>
+        <link>http://sensorario.github.io/2014/08/19/title/</link>
+        <guid isPermaLink="true">http://sensorario.github.io/2014/08/19/title/</guid>
+        
+        
+      </item>
+    
+>>>>>>> b68249de9dbee4ace1d9c3316fe7fa7b3d86ae7e
   </channel>
 </rss>
