@@ -1,7 +1,0 @@
----
-pubDate:   2014-08-19 16:54:08
----
-
-# Hello World
-
-Mmmm!

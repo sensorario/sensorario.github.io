@@ -1,11 +1,11 @@
 # Site settings
-title: sensorario words
-email: sensorario@gmail.com
-description: "Do your best and then deal with the conseguences."
-baseurl: /blog
-url: http://sensorario.github.io
-twitter_username: sensorario
-github_username:  sensorario
+title: Your awesome title
+email: your-email@domain.com
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+baseurl: ""
+url: "http://yourdomain.com"
+twitter_username: jekyllrb
+github_username:  jekyll
 
 # Build settings
 markdown: kramdown
