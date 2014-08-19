@@ -1,0 +1,12 @@
+# Site settings
+title: sensorario words
+email: sensorario@gmail.com
+description: "Do your best and then deal with the conseguences."
+baseurl: ""
+url: "http://sensorario.github.io"
+twitter_username: sensorario
+github_username:  sensorario
+
+# Build settings
+markdown: kramdown
+permalink: pretty
