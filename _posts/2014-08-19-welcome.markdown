@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome!"
-date:   2014-08-19 18:33:52
+date:   2014-08-19
 categories: sensorario
 ---
 
