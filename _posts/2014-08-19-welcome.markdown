@@ -1,12 +1,8 @@
 ---
 layout: post
-title:  "Welcome!"
+title:  "sensorario.github.io"
 date:   2014-08-19
 categories: sensorario
 ---
 
-I dont think my history is cool. So, ... I am Simone Gentili, my nickname is demo. But a lot of people uses this nickname, so you can find me as sensorario. Its my email. My nickname in facebook. My nickname on twitter. My nickname on Linkedin, ... and so on.
-
-I play with Symfony2, I try to learn php, best practices and OOP since, ... I do not remember, sorry. So, ... this post is only a test, an experiment. And, ...
-
-bye bye!
+Una volta bloggavo un casino. Adesso non ne ho proprio voglia.
