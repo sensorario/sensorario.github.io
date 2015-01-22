@@ -5,4 +5,5 @@ date:   2014-08-19
 categories: sensorario
 ---
 
+Hello world!
 Una volta bloggavo un casino. Adesso non ne ho proprio voglia.
