@@ -210,25 +210,13 @@ If both types and their attributes are equal, the Value are considered equal. Fu
 
 Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.
 
-// constructor cannot be static
-// todo: talk about immutability
-// todo: talk about VO creation
-// todo: talk about VO use
-// todo: talk about VO optimisation
-// todo: talk about VO mantain
-// todo: VO instead of Entities
-// todo: what about php?
-// todo: how to equality?
-// todo: collaborators
-// todo: propose a speach about Entities
-
 # Wrap up
 
  - When you test, value object should not be mocked
 
 # Books
 
-DDD Il libro rosso
+DDD the red book
 PHP Objects, Patterns, and Practice
 
 // dubbi riguardanti il linguaggio PHP
