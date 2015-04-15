@@ -150,6 +150,7 @@ Use of plain string can cause problems. Defining a ThingName type instead, we ca
 // todo: improve this part of story
 
 ## Replaceability
+h2
 
 In your model an immutable Value should be held as a reference by an Entity as long as its contant state describe the currenctly correct While Value. If that is no longer true, the entire Value is completely replaced with a new Value that does represent the currently correct whole.
 
@@ -209,6 +210,36 @@ We are dealing with object complex and changement frequents. A replacemente is n
 If both types and their attributes are equal, the Value are considered equal. Further, if any two or more Value instances are equal, you could assign any one of the equal Value instances to an Entity's property  and the assignment would not change the value of the property.
 
 Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.
+
+<h2>Side-Effect-Free Behavior</h2>
+
+<p>"Since no modification occurs when executing a specific operation, that operation is said to be side-effect free." All methods of a Value Objects are side-effect free, because they must not violate the immutability characteristics. We might see Value Objects only as attribute containes.</p>
+
+<p>Pure functional programming languages allow nothing but side-effect-free behavior, requiring all closures to receive and produce only immutable value objects.</p>
+
+    <?php
+    $fullName = new FullName("Gentili", "Simone");
+    ...
+    $fullName = $fullName->withNickname("Demo");
+
+The method withNickname() must respect the side-effect-free rule. Value Objects are immutable. Thus, the method will generate new container of attributes. Thw use of methods with*, make all more expressive. The method will be implemented in this way:
+
+    class FullName
+    {
+        public static function withNickname($nickname)
+        {
+            return new self([
+                'name' => $this->name(),
+                'surname' => $this->name(),
+                'nickname' => $nickname,
+            ]);
+        }
+    }
+
+Method must not modify the state. Every function will generate new value.
+<p>This method also capture important business logic.</p>
+
+<p>When we pass an entity as a function parameter, we must not modify that entity. Why? the side-effect free does not regard only Value Object: it also regard the other domain parts. If we need to change the state of the entity, function can take the entity as input and return something the entity could use to modify itself, on its own terms and responsibility.</p>
 
 # Wrap up
 
