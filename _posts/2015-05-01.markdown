@@ -5,13 +5,11 @@ date:   2014-08-19
 categories: DDD
 ---
 
-<h1>Value Objects<h1>
-
 ## Quality of software and quality of design
 
 If we are talking about Value Objects, we are inside a specific context: Domainr-Driven Design. And What is Domain Driven Design? Is a way to produce quality in the software we develop. Some quality is reached by using tests avoiding delivering software with fatal number of bugs. Quality of software is reached via tests. Wuality of design could be reached with Domain-Driven Design. DDD gives you tools necessary to high-quality software. Value Objects are a vital building block of DDD.
 
-# Value Objects
+<h1>Value Objects<h1>
 
 ## Definition
 
