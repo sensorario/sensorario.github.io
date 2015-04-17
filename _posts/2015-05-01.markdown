@@ -11,13 +11,13 @@ If we are talking about Value Objects, we are inside a specific context: Domainr
 
 <h1>Value Objects<h1>
 
-## Definition
+<h2>Definition</h2>
 
-Value types that measures, quantify, or describe things are easier to create, test, use, optimize ad mantain.
+<p>Value Objects are Value Types that measures, quantify, or describe things are easier to create, test, use, optimize ad mantain.</p>
 
-It's just an unharmed and harmless Value that comes and goes as needed.
+<p>It's just an unharmed and harmless Value that comes and goes as needed.</p>
 
-When designed correctly, a Value instance can be created, handed off, and forgotten about.
+<p>When designed correctly, a Value instance can be created, handed off, and forgotten about.</p>
 
 ## Examples
 
@@ -40,17 +40,17 @@ When designed correctly, a Value instance can be created, handed off, and forgot
 
 ## Ubiquitous Language
 
-Is a shared team language. It's shared by domain experts and developers alke. In fact, it's shared by everyone on the project team. No matter your role on the team, since you are on the team you use the Ubiquitous Language of the project. Is not an adoption of business language. Is not industry standard. Is a language developed by the team, composed of both domain experts and software developers.
+<p>Is a shared team language. It's shared by domain experts and developers alke. In fact, it's shared by everyone on the project team. No matter your role on the team, since you are on the team you use the Ubiquitous Language of the project. Is not an adoption of business language. Is not industry standard. Is a language developed by the team, composed of both domain experts and software developers.</p>
 
 ## How do we determine if a domain concept should be modeled as a Value?
 
-To answer, we need to pay attention to its characteristics. When you care only about the attributes of an element of the model, classify it as a Value Object. Treat the Value Object as immutable. Don't give it any identity and avoid the design complexities necessary yo mantain Entities.
+<p>To answer, we need to pay attention to its characteristics. When you care only about the attributes of an element of the model, classify it as a Value Object. Treat the Value Object as immutable. Don't give it any identity and avoid the design complexities necessary yo mantain Entities.</p>
 
-If we are interested of a value and not about an identity, we need a value object. Is ONE sum of values that an entity can assume. A value object, could be equals to more entities. And more entities could be equals to one value object. If the point of view is the identity.
+<p>If we are interested of a value and not about an identity, we need a value object. Is ONE sum of values that an entity can assume. A value object, could be equals to more entities. And more entities could be equals to one value object. If the point of view is the identity.</p>
 
 # Characteristics
 
-When you are trying to decide if a concept is a Value, you should determine whether it possesses most of these characteristics:
+<p>When you are trying to decide if a concept is a Value, you should determine whether it possesses most of these characteristics:</p>
 
  - it measures, quantifies, or describes a thing in the domain
  - it can be mantained as immutable
@@ -61,13 +61,13 @@ When you are trying to decide if a concept is a Value, you should determine whet
 
 ## Measures, Quantifies or Describes
 
-When you have a true Value Object in your model, it is not a thing in your domain. Is a concept that measures, quantifies, or describes a thing in the domain. A person has an age. Age is not a thing. Age measures or quantifies the number of years the person has lived. A person has a name. The name is not a thing. Name describes how the person is called.
+<p>When you have a true Value Object in your model, it is not a thing in your domain. Is a concept that measures, quantifies, or describes a thing in the domain. A person has an age. Age is not a thing. Age measures or quantifies the number of years the person has lived. A person has a name. The name is not a thing. Name describes how the person is called.</p>
 
-Closely related to the "Conceptual Whole" characteristic.
+<p>Closely related to the "Conceptual Whole" characteristic.</p>
 
 ## Immutable
 
-Is unchangeable after creation. There are exceptions. I dont like exceptions. In Java or C# you can use Value class constructors. In PHP, a solution is to make constructor private, and accept "creation" only throw public static methods. Generally, constructor parameter is an array with key values as measures of the value object.
+<p>Is unchangeable after creation. There are exceptions. I dont like exceptions. In Java or C# you can use Value class constructors. In PHP, a solution is to make constructor private, and accept "creation" only throw public static methods. Generally, constructor parameter is an array with key values as measures of the value object.</p>
 
     <?php
     namespace Sensorario\Pug\ValueObjects;
@@ -87,17 +87,17 @@ Is unchangeable after creation. There are exceptions. I dont like exceptions. In
         ...
     }
 
-Someone accept the use of setters in a private context. For me is a violation of immutability. You can use setters or initialization methods, but only in a private context: you cannot "set" something because a VO should be stateless.
+<p>Someone accept the use of setters in a private context. For me is a violation of immutability. You can use setters or initialization methods, but only in a private context: you cannot "set" something because a VO should be stateless.</p>
 
-You can design a Value Object that hold references to Entities. But if Entity change, Value changes too, and this is a violation of the quality of immutability.
+<p>You can design a Value Object that hold references to Entities. But if Entity change, Value changes too, and this is a violation of the quality of immutability.</p>
 
-Sometimes it makes no sense for an object to be immutable. That's perfectly fine, and it indicates that the object should be modeled as an Entity.
+<p>Sometimes it makes no sense for an object to be immutable. That's perfectly fine, and it indicates that the object should be modeled as an Entity.</p>
 
 ## Conceptual Whole
 
-Only toghether, the one, two or a number of individual atributes, form the complete intended measure or description. This is different from merely grouping a set of attributes toghether in an object. The grouping itself accomplishes little if the whole fails to adequately describe another thing in the model.
+<p>Only toghether, the one, two or a number of individual atributes, form the complete intended measure or description. This is different from merely grouping a set of attributes toghether in an object. The grouping itself accomplishes little if the whole fails to adequately describe another thing in the model.</p>
 
-{50 euro} contains two attributes: 50 and euro. Separately these attributes describes something else or nothing special. These attributes are a conceptual Whole that describe a monetary measure. We dont expect to have two separate attributes: one of amount and one of currency. Because is not just an amount or just a currency. To properly describe a thing's worth it must be trated not as two separate attributes, but as a whole value: {50 euro}.
+<p>{50 euro} contains two attributes: 50 and euro. Separately these attributes describes something else or nothing special. These attributes are a conceptual Whole that describe a monetary measure. We dont expect to have two separate attributes: one of amount and one of currency. Because is not just an amount or just a currency. To properly describe a thing's worth it must be trated not as two separate attributes, but as a whole value: {50 euro}.</p>
 
     <?php
     namespace Sensorario\Pug\ValueObjects;
@@ -115,15 +115,16 @@ Only toghether, the one, two or a number of individual atributes, form the compl
         }
     }
 
-Each attribute is defined! I am afraid, when there is no control. A Value Object is a sort of defined state.
+<p>Each attribute is defined! I am afraid, when there is no control. A Value Object is a sort of defined state.</p>
+
 // todo: talk about when an entity could be not complete.
 // todo: in tdd, .. what happens when you change a value object's default behavior?
 
-When choose an attribute name, think about conceptual whole. The name must reflect this characteristic.
+<p>When choose an attribute name, think about conceptual whole. The name must reflect this characteristic.</p>
 
     MonetaryMeasure::withAmountAndCurrency(50, 'euro');
 
-This is not perfect. We can use additiona type such as Currency. Or Amount.
+<p>This is not perfect. We can use additiona type such as Currency. Or Amount.</p>
 
     <?php
     namespace Sensorario\Pug\ValueObjects;
@@ -141,20 +142,20 @@ This is not perfect. We can use additiona type such as Currency. Or Amount.
         }
     }
 
-This makes VO more descriptive. And a Factory and possibly a Builder, can take care about VO creation.
+<p>This makes VO more descriptive. And a Factory and possibly a Builder, can take care about VO creation.</p>
 
-We can user other value object, to define a value object. In this case, the parent reference to a Value Object is not just an attribute. Rather, it is a property of the containing parent in the model that holds a reference to it. Also, ... in this case, names of attributes can be determined only after establishing our Bounded Context and its Ubiquitous Language.
+<p>We can user other value object, to define a value object. In this case, the parent reference to a Value Object is not just an attribute. Rather, it is a property of the containing parent in the model that holds a reference to it. Also, ... in this case, names of attributes can be determined only after establishing our Bounded Context and its Ubiquitous Language.</p>
 
-Use of plain string can cause problems. Defining a ThingName type instead, we can centralize all concerns dealing with the name of a ThingOfWorth.
+<p>Use of plain string can cause problems. Defining a ThingName type instead, we can centralize all concerns dealing with the name of a ThingOfWorth.</p>
 
 // todo: improve this part of story
 
 ## Replaceability
 h2
 
-In your model an immutable Value should be held as a reference by an Entity as long as its contant state describe the currenctly correct While Value. If that is no longer true, the entire Value is completely replaced with a new Value that does represent the currently correct whole.
+<p>In your model an immutable Value should be held as a reference by an Entity as long as its contant state describe the currenctly correct While Value. If that is no longer true, the entire Value is completely replaced with a new Value that does represent the currently correct whole.</p>
 
-666 is a number. 42 is a number. 42 completely replace 666. Che conceptual whole is "total" amount of something. We dont modify 666. We change total to 4.
+<p>666 is a number. 42 is a number. 42 completely replace 666. Che conceptual whole is "total" amount of something. We dont modify 666. We change total to 4.</p>
 
     <?php
     $total = 666;
@@ -201,15 +202,15 @@ In che modo avviene il replacement?
         return new self($params);
     }
 
-I did not use a method on FullName to change the state of the value of name to contain the first initial of my middle name. That would violate the immutability quality of the Value Object. Rather we simply use Whole Value replacem,ent, assigning the name object reference an entirely new instance of FullName.
+<p>I did not use a method on FullName to change the state of the value of name to contain the first initial of my middle name. That would violate the immutability quality of the Value Object. Rather we simply use Whole Value replacem,ent, assigning the name object reference an entirely new instance of FullName.</p>
 
-We are dealing with object complex and changement frequents. A replacemente is not practical. But replacement also responds to another characteristics of Value Objects: Side-Effect-Free Behavior. Each time we make some operation with a value object, if the kind (the class) is the same, the instance is totally renewed. And yes: values can be same as previous VO.
+<p>We are dealing with object complex and changement frequents. A replacemente is not practical. But replacement also responds to another characteristics of Value Objects: Side-Effect-Free Behavior. Each time we make some operation with a value object, if the kind (the class) is the same, the instance is totally renewed. And yes: values can be same as previous VO.</p>
 
 ## Value Equality
 
-If both types and their attributes are equal, the Value are considered equal. Further, if any two or more Value instances are equal, you could assign any one of the equal Value instances to an Entity's property  and the assignment would not change the value of the property.
+<p>If both types and their attributes are equal, the Value are considered equal. Further, if any two or more Value instances are equal, you could assign any one of the equal Value instances to an Entity's property  and the assignment would not change the value of the property.</p>
 
-Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.
+<p>Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.</p>
 
 <h2>Side-Effect-Free Behavior</h2>
 
@@ -251,4 +252,5 @@ DDD the red book
 PHP Objects, Patterns, and Practice
 
 // dubbi riguardanti il linguaggio PHP
-Non essendo fortemente tipizzato, usiamo sempre e comunque degli array, la cui chiave e' quella che in altri linguaggi sarebbe il nome di una proprieta. E' un approccio pragmatico. Non e' ne quello corretto, ne il solo. Sicuramente possiamo sfruttare la serializzazione e deserializzazione con PHP. Ma quale sarebbe il costo di questa implementazione? Troppo eccessivo. Decisamente piu semplice e', invece, usare gli array, ottimi per php.
+
+<p>Non essendo fortemente tipizzato, usiamo sempre e comunque degli array, la cui chiave e' quella che in altri linguaggi sarebbe il nome di una proprieta. E' un approccio pragmatico. Non e' ne quello corretto, ne il solo. Sicuramente possiamo sfruttare la serializzazione e deserializzazione con PHP. Ma quale sarebbe il costo di questa implementazione? Troppo eccessivo. Decisamente piu semplice e', invece, usare gli array, ottimi per php.</p>
