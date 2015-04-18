@@ -5,230 +5,174 @@ date:   2014-08-19
 categories: DDD
 ---
 
-## Quality of software and quality of design
-
-If we are talking about Value Objects, we are inside a specific context: Domainr-Driven Design. And What is Domain Driven Design? Is a way to produce quality in the software we develop. Some quality is reached by using tests avoiding delivering software with fatal number of bugs. Quality of software is reached via tests. Wuality of design could be reached with Domain-Driven Design. DDD gives you tools necessary to high-quality software. Value Objects are a vital building block of DDD.
-
-<h1>Value Objects<h1>
+<em>If we are talking about Value Objects, we are inside a specific context: Domainr-Driven Design. And What is Domain Driven Design? Is a way to produce quality in the software we develop. Some quality is reached by using tests avoiding delivering software with fatal number of bugs. Quality of software is reached via tests. Wuality of design could be reached with Domain-Driven Design. DDD gives you tools necessary to high-quality software. Value Objects are a vital building block of DDD.</em>
 
 <h2>Definition</h2>
-
 <p>Value Objects are Value Types that measures, quantify, or describe things are easier to create, test, use, optimize ad mantain.</p>
-
 <p>It's just an unharmed and harmless Value that comes and goes as needed.</p>
-
 <p>When designed correctly, a Value instance can be created, handed off, and forgotten about.</p>
 
-## Examples
+<h2>Examples</h2>
+<p>
+    <ul>
+        <li>numbers</li>
+        <li>text strings</li>
+        <li>dates</li>
+        <li>times</li>
+        <li>person's full name</li>
+        <li>currecny</li>
+        <li>color</li>
+        <li>phone numbere</li>
+        <li>podstal addresses</li>
+        <li>email address</li>
+        <li>json</li>
+        <li>uri</li>
+        <li>...</li>
+        <li>an event</li>
+        <li>http message</li>
+        <li>http status code</li>
+    </ul>
+</p>
 
- - numbers
- - text strings
- - dates
- - times
- - person's full name
- - currecny
- - color
- - phone numbere
- - podstal addresses
- - email address
- - json
- - uri
- - ...
- - an event
- - http message
- - http status code
-
-## Ubiquitous Language
-
+<h2>Ubiquitous Language</h2>
 <p>Is a shared team language. It's shared by domain experts and developers alke. In fact, it's shared by everyone on the project team. No matter your role on the team, since you are on the team you use the Ubiquitous Language of the project. Is not an adoption of business language. Is not industry standard. Is a language developed by the team, composed of both domain experts and software developers.</p>
 
-## How do we determine if a domain concept should be modeled as a Value?
-
+<h2>How do we determine if a domain concept should be modeled as a Value?</h2>
 <p>To answer, we need to pay attention to its characteristics. When you care only about the attributes of an element of the model, classify it as a Value Object. Treat the Value Object as immutable. Don't give it any identity and avoid the design complexities necessary yo mantain Entities.</p>
-
 <p>If we are interested of a value and not about an identity, we need a value object. Is ONE sum of values that an entity can assume. A value object, could be equals to more entities. And more entities could be equals to one value object. If the point of view is the identity.</p>
 
-# Characteristics
-
+<h2>Characteristics</h2>
 <p>When you are trying to decide if a concept is a Value, you should determine whether it possesses most of these characteristics:</p>
+<ul>
+    <li>it measures, quantifies, or describes a thing in the domain</li>
+    <li>it can be mantained as immutable</li>
+    <li>it models a conceptual whole by composing related attributes as an integral unit</li>
+    <li>it is completely replaceable when the measurement or description changes</li>
+    <li>it can be compared with others using equality</li>
+    <li>it supplies its collaborators with Side-Effect-Free Behavior</li>
+</li>
 
- - it measures, quantifies, or describes a thing in the domain
- - it can be mantained as immutable
- - it models a conceptual whole by composing related attributes as an integral unit
- - it is completely replaceable when the measurement or description changes
- - it can be compared with others using equality
- - it supplies its collaborators with Side-Effect-Free Behavior
-
-## Measures, Quantifies or Describes
-
+<h2>Measures, Quantifies or Describes</h2>
 <p>When you have a true Value Object in your model, it is not a thing in your domain. Is a concept that measures, quantifies, or describes a thing in the domain. A person has an age. Age is not a thing. Age measures or quantifies the number of years the person has lived. A person has a name. The name is not a thing. Name describes how the person is called.</p>
-
 <p>Closely related to the "Conceptual Whole" characteristic.</p>
 
-## Immutable
-
-<p>Is unchangeable after creation. There are exceptions. I dont like exceptions. In Java or C# you can use Value class constructors. In PHP, a solution is to make constructor private, and accept "creation" only throw public static methods. Generally, constructor parameter is an array with key values as measures of the value object.</p>
-
+<h2>Immutable</h2>
+<p>Setters violate immutability. You can use setters or initialization methods, but only in a private context: you cannot "set" something because a VO should be stateless. You can design a Value Object that hold references to Entities. But if Entity change, Value changes too, and this is a violation of the quality of immutability.</p>
+<ul>
+    <li>final class</li>
+    <li>private constructor</li>
+    <li>named constructor</li>
+</ul>
+<code>
     <?php
     namespace Sensorario\Pug\ValueObjects;
-
-    public final class EmailAddress
-    {
-        public static function withDomain($domain)
-        {
+    final class EmailAddress {
+        private function __construct() {
+            // ...
+        }
+        public static function withDomain($domain) {
             return new self(compact('domain'));
         }
-
-        public static function withAddress($address)
-        {
+        public static function withAddress($address) {
             return new self(compact('address'));
         }
-
-        ...
     }
-
-<p>Someone accept the use of setters in a private context. For me is a violation of immutability. You can use setters or initialization methods, but only in a private context: you cannot "set" something because a VO should be stateless.</p>
-
-<p>You can design a Value Object that hold references to Entities. But if Entity change, Value changes too, and this is a violation of the quality of immutability.</p>
-
+</code>
 <p>Sometimes it makes no sense for an object to be immutable. That's perfectly fine, and it indicates that the object should be modeled as an Entity.</p>
 
-## Conceptual Whole
-
+<h2>Conceptual Whole</h2>
 <p>Only toghether, the one, two or a number of individual atributes, form the complete intended measure or description. This is different from merely grouping a set of attributes toghether in an object. The grouping itself accomplishes little if the whole fails to adequately describe another thing in the model.</p>
-
 <p>{50 euro} contains two attributes: 50 and euro. Separately these attributes describes something else or nothing special. These attributes are a conceptual Whole that describe a monetary measure. We dont expect to have two separate attributes: one of amount and one of currency. Because is not just an amount or just a currency. To properly describe a thing's worth it must be trated not as two separate attributes, but as a whole value: {50 euro}.</p>
-
+<code>
     <?php
     namespace Sensorario\Pug\ValueObjects;
-
-    public final class MonetaryMeasure
-    {
-        ...
-
-        public static function withAmountAndCurrency($amount, $currency)
-        {
+    public final class MonetaryMeasure {
+        public static function withAmountAndCurrency($amount, $currency) {
             return new self(compact(
                 'amount',
                 'currency'
             ));
         }
     }
-
+</code>
 <p>Each attribute is defined! I am afraid, when there is no control. A Value Object is a sort of defined state.</p>
-
-// todo: talk about when an entity could be not complete.
-// todo: in tdd, .. what happens when you change a value object's default behavior?
-
+<code>
+    <?php
+        $xml = new SimpleXmlElement(...);
+        $xml->name = 'Simone';
+        // xml is not consistent
+        // i can forget to complete the conceptual whole
+</code>
 <p>When choose an attribute name, think about conceptual whole. The name must reflect this characteristic.</p>
-
+<code>
     MonetaryMeasure::withAmountAndCurrency(50, 'euro');
-
+</code>
 <p>This is not perfect. We can use additiona type such as Currency. Or Amount.</p>
-
+<code>
     <?php
     namespace Sensorario\Pug\ValueObjects;
-
-    public final class MonetaryMeasure
-    {
-        ...
-
-        public static function withAmountAndCurrency(Amount $amount, Currency $currency)
-        {
+    public final class MonetaryMeasure {
+        public static function withAmountAndCurrency(Amount $amount, Currency $currency) {
             return new self([
-                'amount'   => $amount->value(),
-                'currency' => (string) $currency
+                "amount"   => $amount->value(),
+                "currency" => (string) $currency,
             ]);
         }
     }
-
+</code>
 <p>This makes VO more descriptive. And a Factory and possibly a Builder, can take care about VO creation.</p>
-
 <p>We can user other value object, to define a value object. In this case, the parent reference to a Value Object is not just an attribute. Rather, it is a property of the containing parent in the model that holds a reference to it. Also, ... in this case, names of attributes can be determined only after establishing our Bounded Context and its Ubiquitous Language.</p>
-
 <p>Use of plain string can cause problems. Defining a ThingName type instead, we can centralize all concerns dealing with the name of a ThingOfWorth.</p>
 
-// todo: improve this part of story
-
-## Replaceability
-h2
-
+<h2>Replaceabiliy</h2>
 <p>In your model an immutable Value should be held as a reference by an Entity as long as its contant state describe the currenctly correct While Value. If that is no longer true, the entire Value is completely replaced with a new Value that does represent the currently correct whole.</p>
-
 <p>666 is a number. 42 is a number. 42 completely replace 666. Che conceptual whole is "total" amount of something. We dont modify 666. We change total to 4.</p>
-
+<code>
     <?php
-    $total = 666;
-    $total = 42;
-
-We have replaced the value. This is the point of Value Objects. The point of replacement. Is not an oversimplification. It is exactly what replacement does even when Value Object type is more complex than an integer.
-
+        $total = 666;
+        $total = 42;
+</code>
+<p>We have replaced the value. This is the point of Value Objects. The point of replacement. Is not an oversimplification. It is exactly what replacement does even when Value Object type is more complex than an integer.</p>
+<code>
     <?php
-    // TODO: metodi magici ed override di un costruttore con php:w
-    $fullName = new FullName("Gentili", "Simone");
-    $fullName = new FullName("Gentili", "Demo", "Simone");
+        $fullName = FullName::fromSurnameName("Gentili", "Simone");
+        $fullName = FullName::fromSurameNickAndName("Gentili", "Demo", "Simone");
 
-Non e' un buon esempio per php
+        $fullName = FullName::box([
+            'surname' => "Gentili",
+            'name'    => "Simone",
+        ]);
 
-    <?pho
-    $fullName = FullName::fromSurnameName("Gentili", "Simone");
-    $fullName = FullName::fromSurameNickAndName("Gentili", "Demo", "Simone");
-
-    $fullName = FullName::box([
-        'surname' => "Gentili",
-        'name'    => "Simone",
-    ]);
-
-    $fullName = FullName::box([
-        'surname'  => "Gentili",
-        'nickname' => "Demo",
-        'name'     => "Simone",
-    ]);
-
-In che modo avviene il replacement?
-
-    // todo: migliorare notevolmente
-    private function __construct(array $params)
-    {
-        $fullName = new FullName([
-            'surname'  => isset($params['surname']) ? $params['surname'] : "Gentili",
+        $fullName = FullName::box([
+            'surname'  => "Gentili",
             'nickname' => "Demo",
             'name'     => "Simone",
         ]);
-    }
-
-    public function box(array $params = [])
-    {
-        return new self($params);
-    }
-
+</code>
 <p>I did not use a method on FullName to change the state of the value of name to contain the first initial of my middle name. That would violate the immutability quality of the Value Object. Rather we simply use Whole Value replacem,ent, assigning the name object reference an entirely new instance of FullName.</p>
-
 <p>We are dealing with object complex and changement frequents. A replacemente is not practical. But replacement also responds to another characteristics of Value Objects: Side-Effect-Free Behavior. Each time we make some operation with a value object, if the kind (the class) is the same, the instance is totally renewed. And yes: values can be same as previous VO.</p>
 
-## Value Equality
-
+<h2>Equality</h2>
 <p>If both types and their attributes are equal, the Value are considered equal. Further, if any two or more Value instances are equal, you could assign any one of the equal Value instances to an Entity's property  and the assignment would not change the value of the property.</p>
-
 <p>Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.</p>
 
 <h2>Side-Effect-Free Behavior</h2>
-
 <p>"Since no modification occurs when executing a specific operation, that operation is said to be side-effect free." All methods of a Value Objects are side-effect free, because they must not violate the immutability characteristics. We might see Value Objects only as attribute containes.</p>
-
 <p>Pure functional programming languages allow nothing but side-effect-free behavior, requiring all closures to receive and produce only immutable value objects.</p>
-
+<code>
     <?php
-    $fullName = new FullName("Gentili", "Simone");
-    ...
-    $fullName = $fullName->withNickname("Demo");
-
-The method withNickname() must respect the side-effect-free rule. Value Objects are immutable. Thus, the method will generate new container of attributes. Thw use of methods with*, make all more expressive. The method will be implemented in this way:
-
-    class FullName
-    {
-        public static function withNickname($nickname)
-        {
+        $fullName = new FullName("Gentili", "Simone");
+        ...
+        $fullName->withNickname("Demo"); // modifiche perse
+        $fullName = $fullName->withNickname("Demo");
+</code>
+<p>The method withNickname() must respect the side-effect-free rule. Value Objects are immutable. Thus, the method will generate new container of attributes. Thw use of methods withSomething(), make all more expressive. The method will be implemented in this way:</p>
+<code>
+    class FullName {
+        private function __construct(array $params = []) {
+            // ...
+        }
+        public static function withNickname($nickname) {
             return new self([
                 'name' => $this->name(),
                 'surname' => $this->name(),
@@ -236,21 +180,23 @@ The method withNickname() must respect the side-effect-free rule. Value Objects 
             ]);
         }
     }
-
-Method must not modify the state. Every function will generate new value.
+</code>
+<p>Method must not modify the state. Every function will generate new value.</p>
 <p>This method also capture important business logic.</p>
-
 <p>When we pass an entity as a function parameter, we must not modify that entity. Why? the side-effect free does not regard only Value Object: it also regard the other domain parts. If we need to change the state of the entity, function can take the entity as input and return something the entity could use to modify itself, on its own terms and responsibility.</p>
 
-# Wrap up
+<h1>Wrap up</h1>
+<ul>
+    <li>When you test, value object should not be mocked</li>
+</ul>
 
- - When you test, value object should not be mocked
-
-# Books
-
+<h1>Books</h1>
 DDD the red book
 PHP Objects, Patterns, and Practice
-
 // dubbi riguardanti il linguaggio PHP
-
 <p>Non essendo fortemente tipizzato, usiamo sempre e comunque degli array, la cui chiave e' quella che in altri linguaggi sarebbe il nome di una proprieta. E' un approccio pragmatico. Non e' ne quello corretto, ne il solo. Sicuramente possiamo sfruttare la serializzazione e deserializzazione con PHP. Ma quale sarebbe il costo di questa implementazione? Troppo eccessivo. Decisamente piu semplice e', invece, usare gli array, ottimi per php.</p>
+
+<h2>Links</h2>
+<ul>
+    <li><a href="http://verraes.net/2014/06/named-constructors-in-php/">named constructor</a></li>
+</ul>
