@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Value Objects"
-date:   2014-08-19
+date:   2015-05-01
 categories: DDD
 ---
 
@@ -55,6 +55,7 @@ categories: DDD
 
     <h2>Immutable</h2>
     <p>This means that Value Object are stateless. We cannot modify a value object. Setters violate immutability.</p>
+    <p>In some implementation, in other languages, setters are allowed BUT with private visiblity. In these cases basic attribute initialization is oerfirned first by invoking basic private setters.</p>
     <p>You can design a Value Object handled to one or more Entities. But is not a good idea because if Entity change, Value changes too, and this is a violation of the quality of immutability. State cannot change! Is Value Object you have disigned need state changement, consider the idea to use an Entity.</p>
     <code>
         <?php
@@ -204,6 +205,35 @@ categories: DDD
             const NOT_FOUND = 404;
         }
     </code>
+</div>
+
+<div class="testing-value-objects">
+    <p>Test first! Tests provinding examples of how a client will use each object. In TDD with Value Objects we are not really interested in unit testing. There is mre interest in demostrating how various objects in the doimain model will be used by clients and what thos clients can expect when they use them. If we are writing a user's manual for the model, we would provide these tests as the most appropriate code sample for how clients should use this specific object.</p>
+    <p>There are different motications for each type of test. Unit test and behavioral test have their place, as do the following modeling tests. Tests should have domain meaning. Is not necessary to test value objects. Value objects can improve test by test when others parts tests grow up. To test Value Object we should use acceptance test.</p>
+    <p>Value Object should not be moked. Characteristics of value object, about immutability and equality, should suggest that Value Objects are really tested in acceptance tests.</p>
+</div>
+
+<div class="implementation">
+    <p>If all setter has private scope, there is no opportunity for attributes to be exposed to mutation by consumers.</p>
+    <p>Fluent interface!</p>
+    <code>
+        <?php
+        $valueObject = ValueObject::box([
+            'attribute' => 'value',
+        ]);
+
+        $request = Request::withCode(200);
+        $request = $request->andHeader('Referer', 'http://sensorario.github.io');
+    </code>
+</div>
+
+<div class="persisting-value-object">
+    <p>There are a variety of ways to persit Value Object instances to a persistent store. We are interested in persisting Values along with the state of the aggregate instances that contain them. These examples are based on the assumpion that an Aggregate is beign added to or read from its Repository, and its contained Values are persisted and reconstituted behind the scenes along with the Entity that contains them.</p>
+    <p>ORM such Doctrine2 is popular and widely used. Using an ORM to map every class to a table and every attribute to a column adds complexity, which may be unwarranted.</p>
+    <p>Most times that a Value Object is persisted to a data store, it is stored in a denormalized fashion. Its attributes are stored in the same database table row as its Entity object. This makes the storage and retrieval of Values clean and optimized and prevents any persistence store leakage into the model. It's both a pleasure and a relief when Values can be persisted this way.</p>
+    <p>There are times when Value Objects in the model will of necessary be stored as an Entity with respect to a relational persistence store. When persisted an instance of a specific value object type will occupy its own row in a relational database table that exists specifically for its own row in a relational database table that exists specifically for its type, and it will have its own database primary key column. This happens when, when supporting a collection of Value Object instance with ORM. In such cases the Value type persistent data is modeled as a database entity.</p>
+    <p>Is this an indication that the domain model object should reflect the design of the data model and be an Entity rather.</p>
+    <p>Persisting a single Value Object instance to a database is straightforward. </p>
 </div>
 
 <div class="resources">
