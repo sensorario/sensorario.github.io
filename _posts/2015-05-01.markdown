@@ -160,6 +160,18 @@ categories: DDD
     <h2>Equality</h2>
     <p>If both types and their attributes are equal, the Value are considered equal. Further, if any two or more Value instances are equal, you could assign any one of the equal Value instances to an Entity's property  and the assignment would not change the value of the property.</p>
     <p>Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.</p>
+    <code>
+        $a = new Currency('USD');
+        $b = new Currency('USD');
+
+        var_dump($a == $b);  // bool(true)
+        var_dump($a === $b); // bool(false)
+
+        $c = new Currency('EUR');
+
+        var_dump($a == $c);  // bool(false)
+        var_dump($a === $c); // bool(false)
+    </code>
 
     <h2>Side-Effect-Free Behavior</h2>
     <p>"Since no modification occurs when executing a specific operation, that operation is said to be side-effect free." All methods of a Value Objects are side-effect free, because they must not violate the immutability characteristics. We might see Value Objects only as attribute container</p>
@@ -237,14 +249,19 @@ categories: DDD
 </div>
 
 <div class="resources">
+    <h1>Interesting Github repositories</h1>
+    <ul>
+        <li><a href="https://github.com/nicolopignatelli/valueobjects">nicolopignatelli/valueobjects</a></li>
+    </ul>
+
     <h1>Suggested Books</h1>
     <ul>
-        <li>PHP Objects, Patterns, and Practicei</li>
+        <li><a href="https://leanpub.com/ddd-in-php">ddd in php</a></li>
     </ul>
 
     <h2>Links</h2>
     <ul>
-        <li><a href="">wikipedia</a></li>
         <li><a href="http://verraes.net/2014/06/named-constructors-in-php/">named constructor</a></li>
+        <li><a href="http://www.mockobjects.com/2007/04/test-smell-everything-is-mocked.html">don't mock value objects</a></li>
     </ul>
 </div>
