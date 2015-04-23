@@ -43,7 +43,7 @@ categories: DDD
     <p>When you are trying to decide if a concept is a Value, you should determine whether it possesses most of these characteristics:</p>
     <ul>
         <li>measures, quantifies, or describes a thing in the domain</li>
-        <li>immutable</li>
+        <li><a href="#immutable">immutable</a></li>
         <li>conceptual whole</li>
         <li>replaceable</li>
         <li>equality</li>
@@ -53,7 +53,7 @@ categories: DDD
     <h2>Measures, Quantifies or Describes</h2>
     <p>A Value Object is not a thing of our domain. A person has an age. Age is not a thing. Age measures an amount of years. A person has a name. The name is not a thing. Name describes how the person is called. Name is a description? Name is a Value Object.</p>
 
-    <h2>Immutable</h2>
+    <h2 name="immutable">Immutable</h2>
     <p>This means that Value Object are stateless. We cannot modify a value object. Setters violate immutability.</p>
     <p>In some implementation, in other languages, setters are allowed BUT with private visiblity. In these cases basic attribute initialization is oerfirned first by invoking basic private setters.</p>
     <p>You can design a Value Object handled to one or more Entities. But is not a good idea because if Entity change, Value changes too, and this is a violation of the quality of immutability. State cannot change! Is Value Object you have disigned need state changement, consider the idea to use an Entity.</p>
