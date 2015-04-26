@@ -65,6 +65,7 @@ categories: DDD
     <code>
         <?php
         namespace Sensorario\PugMi\ValueObjects;
+
         final class EmailAddress {
             // we need a public constructor?
             private function __construct() {
@@ -89,6 +90,7 @@ categories: DDD
     <code>
         <?php
         namespace Sensorario\PugMi\ValueObjects;
+
         public final class MonetaryMeasure {
             public static function withAmountAndCurrency($amount, $currency) {
                 return new self(compact(
@@ -134,6 +136,8 @@ categories: DDD
     <p>3 is a number. 42 is a number. 42 could completely replace 3. Che conceptual whole is "the answer". We'll not alter 3 value. We change total value to 42.</p>
     <code>
         <?php
+        namespace Sensorario\Pug\ValueObjects;
+
         $answer = 3;
         $answer = 42;
     </code>
@@ -141,6 +145,7 @@ categories: DDD
     <code>
         <?php
         namespace Sensorario\Pug\ValueObjects;
+
         $amount = "3/EUR";
         $amount = "4/EUR";
         $amount = "3/USD";
@@ -172,6 +177,9 @@ categories: DDD
     <p>If both types and their attributes are equal, the Value are considered equal. Further, if any two or more Value instances are equal, you could assign any one of the equal Value instances to an Entity's property  and the assignment would not change the value of the property.</p>
     <p>Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.</p>
     <code>
+        <?php
+        namespace Sensorario\PugMi\ValueObjects;
+
         $a = new Currency('USD');
         $b = new Currency('USD');
 
@@ -193,6 +201,7 @@ categories: DDD
     <code>
         <?php
         namespace Sensorario\Pug\ValueObjects;
+
         $fullName = new FullName("Gentili", "Simone");
         $fullName->withNickname("Demo"); // modifiche perse
         $fullName = $fullName->withNickname("Demo");
@@ -201,6 +210,7 @@ categories: DDD
     <code>
         <?php
         namespace Sensorario\Pug\ValueObjects;
+
         class FullName {
             private function __construct(array $params = []) {
                 // ...
@@ -226,6 +236,7 @@ categories: DDD
     <code>
         <?php
         namespace Sensorario\PugMi\ValueObjects;
+
         final class HTTPStatusCodes {
             const OK        = 200;
             const NOT_FOUND = 404;
@@ -244,6 +255,8 @@ categories: DDD
     <p>Fluent interface!</p>
     <code>
         <?php
+        namespace Sensorario\PugMi\ValueObjects;
+
         $valueObject = ValueObject::box([
             'attribute' => 'value',
         ]);
