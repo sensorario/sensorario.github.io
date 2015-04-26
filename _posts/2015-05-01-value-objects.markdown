@@ -51,10 +51,12 @@ categories: DDD
     </ul>
 </div>
 
-<div class="characteristics">
+<div class="measures">
     <h2>Measures, Quantifies or Describes</h2>
     <p>A Value Object is not a thing of our domain. A person has an age. Age is not a thing. Age measures an amount of years. A person has a name. The name is not a thing. Name describes how the person is called. Name is a description? Name is a Value Object.</p>
+</div>
 
+<div class="immutability">
     <a name="immutable"></a>
     <h2>Immutable</h2>
     <p>This means that Value Object are stateless. We cannot modify a value object. Setters violate immutability.</p>
@@ -78,7 +80,9 @@ categories: DDD
             }
         }
     </code>
+</div>
 
+<div class="immutability">
     <h2>Conceptual Whole</h2>
     <p>Only toghether, the one, two or a number of individual attributes, form the complete intended measure or description.</p>
     <p>"50/EUR" contains two attributes: "50" and "EUR". Separately these attributes describes something else or nothing special. These attributes are a <strong>Conceptual Whole</strong> that describe a monetary measure. What we care about is not just an amount or just a currency. To properly describe a thing, it must be trated not as two separate attributes, but as a whole value.</p>
@@ -122,7 +126,9 @@ categories: DDD
     <p>This makes VO more descriptive. And a Factory and possibly a Builder, can take care about VO creation.</p>
     <p>We can user other value object, to define a value object. In this case, the parent reference to a Value Object is not just an attribute. Rather, it is a property of the containing parent in the model that holds a reference to it. Also, ... in this case, names of attributes can be determined only after establishing our Bounded Context and its Ubiquitous Language.</p>
     <p>Use of plain string can cause problems. Defining a ThingName type instead, we can centralize all concerns dealing with the name of a ThingOfWorth.</p> -->
+</div>
 
+<div class="immutability">
     <h2>Replaceabiliy</h2>
     <p>When an entire value is replaced, and still represent the currently correct whole.</p>
     <p>3 is a number. 42 is a number. 42 could completely replace 3. Che conceptual whole is "the answer". We'll not alter 3 value. We change total value to 42.</p>
@@ -159,7 +165,9 @@ categories: DDD
     </code>
     <p>Use a method to change the state of che concept "full name" should violate the immutability. Instead of change the value, we replace the previous fill name with the noew one. An entity should use our new Value Object to set the full name of Person class.</p>
     <p>Replacement is not practical. But replacement also responds to another characteristics of Value Objects: Side-Effect-Free Behavior. Each time we make some operation with a value object, if the kind (the class) is the same, the instance is totally renewed.</p>
+</div>
 
+<div class="immutability">
     <h2>Equality</h2>
     <p>If both types and their attributes are equal, the Value are considered equal. Further, if any two or more Value instances are equal, you could assign any one of the equal Value instances to an Entity's property  and the assignment would not change the value of the property.</p>
     <p>Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.</p>
@@ -175,7 +183,10 @@ categories: DDD
         var_dump($a == $c);  // bool(false)
         var_dump($a === $c); // bool(false)
     </code>
+    <!-- add here image of liuggio tweets -->
+</div>
 
+<div class="immutability">
     <h2>Side-Effect-Free Behavior</h2>
     <p>"Since no modification occurs when executing a specific operation, that operation is said to be side-effect free." All methods of a Value Objects are side-effect free, because they must not violate the immutability characteristics. We might see Value Objects only as attribute container</p>
     <p>Pure functional programming languages allow nothing but side-effect-free behavior, requiring all closures to receive and produce only immutable value objects.</p>
