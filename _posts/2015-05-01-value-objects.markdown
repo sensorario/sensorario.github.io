@@ -234,9 +234,9 @@ categories: DDD
 </div>
 
 <div class="testing-value-objects">
-    <p>Test first! Tests provinding examples of how a client will use each object. In TDD with Value Objects we are not really interested in unit testing. There is mre interest in demostrating how various objects in the doimain model will be used by clients and what thos clients can expect when they use them. If we are writing a user's manual for the model, we would provide these tests as the most appropriate code sample for how clients should use this specific object.</p>
-    <p>There are different motications for each type of test. Unit test and behavioral test have their place, as do the following modeling tests. Tests should have domain meaning. Is not necessary to test value objects. Value objects can improve test by test when others parts tests grow up. To test Value Object we should use acceptance test.</p>
-    <p>Value Object should not be moked. Characteristics of value object, about immutability and equality, should suggest that Value Objects are really tested in acceptance tests.</p>
+    <p>There are several way to test code. To test a single class, we have unit tests. To test a group of object collaboration, we have functional tests. At the end, to test the whole application, we have end-to-end tests.</p>
+    <p>In functional tests, we use to mock collaborators. But what happens during a functional test, where collaborator is a Value Object? Need we to mock its behavior? I dont think: because of Value Objects characteristics, we dont (IMHO). Value objects, returns alwais same results. Two value objects are equals if their values are equals.</p>
+    <p>There is no reasons to mock a value object. Value objects, are immutable so just create new instance and use it. Value object is a container of values.</p>
 </div>
 
 <div class="implementation">
@@ -275,6 +275,8 @@ categories: DDD
 
     <h2>Links</h2>
     <ul>
+        <li><a href="http://martinfowler.com/bliki/ValueObject.html">Value object (Martin Fowler)</a></li>
+        <li><a href="http://css.dzone.com/articles/unit-testing-when-value">unit test when value</a></li>
         <li><a href="http://verraes.net/2014/06/named-constructors-in-php/">named constructor</a></li>
         <li><a href="http://www.mockobjects.com/2007/04/test-smell-everything-is-mocked.html">don't mock value objects</a></li>
     </ul>
