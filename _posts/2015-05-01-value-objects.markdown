@@ -248,6 +248,7 @@ categories: DDD
     <p>There are several way to test code. To test a single class, we have unit tests. To test a group of object collaboration, we have functional tests. At the end, to test the whole application, we have end-to-end tests.</p>
     <p>In functional tests, we use to mock collaborators. But what happens during a functional test, where collaborator is a Value Object? Need we to mock its behavior? I dont think: because of Value Objects characteristics, we dont (IMHO). Value objects, returns alwais same results. Two value objects are equals if their values are equals.</p>
     <p>There is no reasons to mock a value object. Value objects, are immutable so just create new instance and use it. Value object is a container of values.</p>
+    <p>Value cannot change their state. So, 42 is always 42. 21 May 2015 is always 21 May 2015. So we cant mock a value. It is easier and less error prone, to use a real type. A value should be so simple that there is no benefit to mock them. Mock objects, aims to mime real objects.</p>
 </div>
 
 <div class="implementation">
@@ -279,6 +280,7 @@ categories: DDD
     <h1>Interesting Github repositories</h1>
     <ul>
         <li><a href="https://github.com/nicolopignatelli/valueobjects">nicolopignatelli/valueobjects</a></li>
+        <li><a href="https://github.com/satooshi/ValueObject">satooshi/ValueObject</a></li>
     </ul>
 
     <h1>Suggested Books</h1>
