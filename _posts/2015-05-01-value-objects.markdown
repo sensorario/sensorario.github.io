@@ -265,6 +265,23 @@ categories: DDD
         $request = Request::withCode(200);
         $request = $request->andHeader('Referer', 'http://sensorario.github.io');
     </code>
+    <p>Value Objects and encapsulation. Mmmm. "Functions should have a small number of arguments. No argument is best, followed by one, two, and three. More than three is very questionable and should be avoided with prejudice." But, what hannpes when we need more and more third party class in a static method of our value object? My question is, ... How many third party elements can I accept, and still think this object as a Value Objecr?</p>
+    <code>
+        <?php
+        namespace Sensorario\PugMi\ValueObjects;
+
+        use Sensorario\Stuff;
+
+        class MyValueObject
+        {
+            public static function withEncapsulation()
+            {
+                $foo = new Stuff('foo');
+                return new self(compact('foo'));
+            }
+        }
+    </code>
+    <p>Whatching Value Objects characteristics, ... this class measures, is immutable, conceptual whole, is replaceable, respect equality and has side-effect-free.</p>
 </div>
 
 <div class="persisting-value-object">
@@ -286,6 +303,7 @@ categories: DDD
     <h1>Suggested Books</h1>
     <ul>
         <li><a href="https://leanpub.com/ddd-in-php">ddd in php</a></li>
+        <li><a href="http://www.amazon.it/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean code</a></li>
     </ul>
 
     <h2>Links</h2>
