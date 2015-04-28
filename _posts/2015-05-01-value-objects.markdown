@@ -281,7 +281,7 @@ categories: DDD
             }
         }
     </code>
-    <p>Whatching Value Objects characteristics, ... this class measures, is immutable, conceptual whole, is replaceable, respect equality and has side-effect-free.</p>
+    <p>Whatching Value Objects characteristics, ... this class measures, is immutable, conceptual whole, is replaceable, respect equality and has side-effect-free. This characteristics are respected only if Stuff class has static behavior. Remember that for immutability, if a Value Object is related to an entity and the entity change, also Value Object changes. If this happens, you have not a Value Object in your hand.</p>
 </div>
 
 <div class="persisting-value-object">
