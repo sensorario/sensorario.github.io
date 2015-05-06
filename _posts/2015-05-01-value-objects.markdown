@@ -251,6 +251,10 @@ categories: DDD
     <p>Value cannot change their state. So, 42 is always 42. 21 May 2015 is always 21 May 2015. So we cant mock a value. It is easier and less error prone, to use a real type. A value should be so simple that there is no benefit to mock them. Mock objects, aims to mime real objects.</p>
 </div>
 
+<div class="final-classes">
+    <p>Now let's talk about open/closed principle. The principle says "software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification". "Closed for modification, in this context, means that when your code exposes some behavior to the outside world, that interface should be stable. Providing an API is a responsibility: by allowing other code to access features of your system, you need to give certain guarantees of stability or low change frequency. The behaviour should be deterministic. It does not mean your implementation can not change. The changes should not affect outside code.". If a method is private, is removable. If an element is needed only inside an'object, is removable. Hidden attributes, behaviors and methods, ... are removable and closed to change. Nothing depends on it and. "Somewhere, perhaps invisible to you, something might depend on it. Closing it, or even making a small change, will break that code."</p>
+</div>
+
 <div class="implementation">
     <p>If all setter has private scope, there is no opportunity for attributes to be exposed to mutation by consumers.</p>
     <p>Fluent interface!</p>
@@ -308,6 +312,7 @@ categories: DDD
 
     <h2>Links</h2>
     <ul>
+        <li><a hreg="http://verraes.net/2014/05/final-classes-in-php/">final classes in php</a></li>
         <li><a href="http://martinfowler.com/bliki/ValueObject.html">Value object (Martin Fowler)</a></li>
         <li><a href="http://css.dzone.com/articles/unit-testing-when-value">unit test when value</a></li>
         <li><a href="http://verraes.net/2014/06/named-constructors-in-php/">named constructor</a></li>
