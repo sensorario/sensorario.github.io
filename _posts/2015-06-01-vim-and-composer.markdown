@@ -36,3 +36,4 @@ endfunction
 
 <h2>Pay attention to readme file</h2>
 <p>Pay more and more attention to README file if you want to contribute to an open source project. User should know what you have done, reading readme file. README is automatically displayed in github project. Care about it because it must contains all information that your users should know to work with your code.</p>
+<p>In some open source projet, also exists a CONTRIBUTING files. This files contains all information for developers that onw to contribute to a project. Coding standard, test informations, suggestions about [rebasing](http://git-scm.com/book/en/v2/Git-Branching-Rebasing) and [commit messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).</p>
