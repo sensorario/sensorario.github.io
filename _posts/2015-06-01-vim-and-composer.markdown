@@ -13,7 +13,7 @@ categories: vim, composer
 <h2>How to get the output of a bash command, from vim</h2>
 <p>Oh! This is very nice. In VimL we can execute a command in bash, and get the output. When I discovered that with a grep and some awk is possible to get the position of a particular class, I've build my command to ask to composer a particular class path. That's great!</p>
 
-<h2>How to show a meggage in vim</h2>
+<h2>How to show a message in vim</h2>
 <p>Finally, the third think I've learned, is the way to show message in the command line. In this case, my grep/awk command can find more or less file. When grep results in more or less than one item, ... I wanted to tell users that there are not unique file in composer auto-generated file. "echo" is the command</p>
 
 <pre>
