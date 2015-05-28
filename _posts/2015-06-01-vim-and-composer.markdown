@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Vim and composer"
-date:   2014-08-19
+date:   2015-05-28
 categories: vim, composer
 ---
 
@@ -33,3 +33,6 @@ function! ComposerKnowWhereCurrentFileIs()
     endif
 endfunction
 </code>
+
+<h2>Pay attention to readme file</h2>
+<p>Pay more and more attention to README file if you want to contribute to an open source project. User should know what you have done, reading readme file. README is automatically displayed in github project. Care about it because it must contains all information that your users should know to work with your code.</p>
