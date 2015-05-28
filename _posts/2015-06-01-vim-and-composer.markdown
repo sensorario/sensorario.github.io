@@ -18,7 +18,7 @@ categories: vim, composer
 
 <pre>
 function! ComposerKnowWhereCurrentFileIs()
-    let l:currentWord = expand('<cword>')
+    let l:currentWord = expand('&lt;cword&gt;')
     let l:command = "grep " . l:currentWord . " ./vendor/composer -R | awk '{print $6}' | awk -F\\' '{print $2}'"
     let l:commandFileFound = l:command . ' | wc -l'
     let l:numberOfResults = system(l:commandFileFound)
