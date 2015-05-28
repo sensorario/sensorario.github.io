@@ -5,7 +5,7 @@ date:   2015-05-28
 categories: vim, composer
 ---
 
-<p>This is my first post in this blog. I want to start here my adventure as blogger. What I want to talk about is a list of bricks I used in my first contrivute to a vim plugin. Plugin is stored here: <a href="https://github.com/vim-php/vim-composer">vim-php/vim-composer</a>. It aims to manage [composer](https://getcomposer.org) directly from vim. It already comes with many features, when I decided to add my personal one. Php developers, often use composer, and composer auto-generate files and know all file path. Instead of use the slowet ctag, or CtrlP, ... why dont ask to composer where files are?</p>
+<p>This is my first post in this blog. I want to start here my adventure as blogger. What I want to talk about is a list of bricks I used in my first contrivute to a vim plugin. Plugin is stored here: <a href="https://github.com/vim-php/vim-composer">vim-php/vim-composer</a>. It aims to manage <a href="https://getcomposer.org">composer</a> directly from vim. It already comes with many features, when I decided to add my personal one. Php developers, often use composer, and composer auto-generate files and know all file path. Instead of use the slowet ctag, or CtrlP, ... why dont ask to composer where files are?</p>
 
 <h2>How to get current word in VimL</h2>
 <p>I must thanks stackoverflow for this. There are several ways to take word under the cursor in Vim. <strong>expand('&lt;cword&gt;')</strong> i used in this little script.</p>
@@ -34,4 +34,4 @@ endfunction
 
 <h2>Pay attention to readme file</h2>
 <p>Pay more and more attention to README file if you want to contribute to an open source project. User should know what you have done, reading readme file. README is automatically displayed in github project. Care about it because it must contains all information that your users should know to work with your code.</p>
-<p>In some open source projet, also exists a CONTRIBUTING files. This files contains all information for developers that onw to contribute to a project. Coding standard, test informations, suggestions about [rebasing](http://git-scm.com/book/en/v2/Git-Branching-Rebasing) and [commit messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).</p>
+<p>In some open source projet, also exists a CONTRIBUTING files. This files contains all information for developers that onw to contribute to a project. Coding standard, test informations, suggestions about <a href="http://git-scm.com/book/en/v2/Git-Branching-Rebasing">rebasing</a> and <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">commit message</a>.</p>
