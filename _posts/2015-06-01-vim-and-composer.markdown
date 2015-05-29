@@ -16,7 +16,7 @@ categories: vim, composer
 <h2>How to show a message in vim</h2>
 <p>Finally, the third think I've learned, is the way to show message in the command line. In this case, my grep/awk command can find more or less file. When grep results in more or less than one item, ... I wanted to tell users that there are not unique file in composer auto-generated file. "echo" is the command</p>
 
-<pre>
+{% highlight vim %}
 function! ComposerKnowWhereCurrentFileIs()
     let l:currentWord = expand('&lt;cword&gt;')
     let l:command = "grep " . l:currentWord . " ./vendor/composer -R | awk '{print $6}' | awk -F\\' '{print $2}'"
@@ -30,7 +30,7 @@ function! ComposerKnowWhereCurrentFileIs()
         echo "No unique file found in composer's generated files"
     endif
 endfunction
-</pre>
+{% endhighlight %}
 
 <h2>Pay attention to readme file</h2>
 <p>Pay more and more attention to README file if you want to contribute to an open source project. User should know what you have done, reading readme file. README is automatically displayed in github project. Care about it because it must contains all information that your users should know to work with your code.</p>
