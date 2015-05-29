@@ -5,6 +5,12 @@ date: 2015-05-28
 tags: vim, composer
 ---
 
+{% highlight vim %}
+if filereadable("./tags")
+    set tags+=./tags
+endif
+{% endhighlight %}
+
 <p>This is my first post in this blog. I want to start here my adventure as blogger. What I want to talk about is a list of trick I used in my first contribute to a vim plugin. Plugin is stored here: <a href="https://github.com/vim-php/vim-composer">vim-php/vim-composer</a>. It aims to manage <a href="https://getcomposer.org">composer</a> directly from vim. It already comes with many features, when I decided to add my personal one. Php developers, often use composer, and composer auto-generate files and know all file path. Instead of use the slowet ctag, or CtrlP, ... why dont ask to composer where files are?</p>
 
 <h2>How to get current word in VimL</h2>
