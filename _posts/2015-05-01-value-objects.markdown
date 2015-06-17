@@ -63,7 +63,6 @@ categories: DDD
     <p>In some implementation, in other languages, setters are allowed BUT with private visiblity. In these cases basic attribute initialization is oerfirned first by invoking basic private setters.</p>
     <p>You can design a Value Object handled to one or more Entities. But is not a good idea because if Entity change, Value changes too, and this is a violation of the quality of immutability. State cannot change! Is Value Object you have disigned need state changement, consider the idea to use an Entity.</p>
     <code>
-        <?php
         namespace Sensorario\PugMi\ValueObjects;
 
         final class EmailAddress {
@@ -88,7 +87,6 @@ categories: DDD
     <p>Only toghether, the one, two or a number of individual attributes, form the complete intended measure or description.</p>
     <p>"50/EUR" contains two attributes: "50" and "EUR". Separately these attributes describes something else or nothing special. These attributes are a <strong>Conceptual Whole</strong> that describe a monetary measure. What we care about is not just an amount or just a currency. To properly describe a thing, it must be trated not as two separate attributes, but as a whole value.</p>
     <code>
-        <?php
         namespace Sensorario\PugMi\ValueObjects;
 
         public final class MonetaryMeasure {
@@ -102,7 +100,6 @@ categories: DDD
     </code>
     <p>Each attribute (necessary) is defined! A Value Object is a sort of defined state. A Value Object is a container of attributes.</p>
     <code>
-        <?php
         namespace Sensorario\PugMi\ValueObjects;
         $person = new Person();
         $person->name('Simone');
@@ -114,7 +111,6 @@ categories: DDD
     </code>
     <!--<p>This is not perfect. We can use additiona type such as Currency. Or Amount.</p>
     <code>
-        <?php
         namespace Sensorario\Pug\ValueObjects;
         public final class MonetaryMeasure {
             public static function withAmountAndCurrency(Amount $amount, Currency $currency) {
@@ -135,7 +131,6 @@ categories: DDD
     <p>When an entire value is replaced, and still represent the currently correct whole.</p>
     <p>3 is a number. 42 is a number. 42 could completely replace 3. Che conceptual whole is "the answer". We'll not alter 3 value. We change total value to 42.</p>
     <code>
-        <?php
         namespace Sensorario\Pug\ValueObjects;
 
         $answer = 3;
@@ -143,7 +138,6 @@ categories: DDD
     </code>
     <p>We have replaced the entire value. This is the point of Value Objects. The point of replacement. Is not an oversemplification. It is exactly what replacement does even when Value Object type is more complex than an integer.</p>
     <code>
-        <?php
         namespace Sensorario\Pug\ValueObjects;
 
         $amount = "3/EUR";
@@ -152,7 +146,6 @@ categories: DDD
         $amount = "42/EUR";
     </code>
     <code>
-        <?php
         namespace Sensorario\Pug\ValueObjects;
         $fullName = FullName::fromSurnameName("Gentili", "Simone");
         $fullName = FullName::fromSurameNickAndName("Gentili", "Demo", "Simone");
@@ -177,7 +170,6 @@ categories: DDD
     <p>If both types and their attributes are equal, the Value are considered equal. Further, if any two or more Value instances are equal, you could assign any one of the equal Value instances to an Entity's property  and the assignment would not change the value of the property.</p>
     <p>Ask yourself if the concept you are designing must be an Entity identified uniqeuely from all other object or if it sufficiently supported using value equality. If the consept itself doesnt require unique identity, model it as a Value Object.</p>
     <code>
-        <?php
         namespace Sensorario\PugMi\ValueObjects;
 
         $a = new Currency('USD');
@@ -199,7 +191,6 @@ categories: DDD
     <p>"Since no modification occurs when executing a specific operation, that operation is said to be side-effect free." All methods of a Value Objects are side-effect free, because they must not violate the immutability characteristics. We might see Value Objects only as attribute container</p>
     <p>Pure functional programming languages allow nothing but side-effect-free behavior, requiring all closures to receive and produce only immutable value objects.</p>
     <code>
-        <?php
         namespace Sensorario\Pug\ValueObjects;
 
         $fullName = new FullName("Gentili", "Simone");
@@ -208,7 +199,6 @@ categories: DDD
     </code>
     <p>The method withNickname() must respect the side-effect-free rule. Value Objects are immutable. Thus, the method will generate new container of attributes. Thw use of methods withSomething(), make all more expressive. The method will be implemented in this way:</p>
     <code>
-        <?php
         namespace Sensorario\Pug\ValueObjects;
 
         class FullName {
@@ -234,7 +224,6 @@ categories: DDD
     <p>In case of currency, standard types could be EUR, USD, ... and so on. Using a standard type helps avoid bogus currencies. Use a Value Object helps development avoiding bogus in values.</p>
     <p>Depending on the level of standardisation: type could be defined in a txt file, exel, ... OR accepted as international standards.</p>
     <code>
-        <?php
         namespace Sensorario\PugMi\ValueObjects;
 
         final class HTTPStatusCodes {
@@ -259,7 +248,6 @@ categories: DDD
     <p>If all setter has private scope, there is no opportunity for attributes to be exposed to mutation by consumers.</p>
     <p>Fluent interface!</p>
     <code>
-        <?php
         namespace Sensorario\PugMi\ValueObjects;
 
         $valueObject = ValueObject::box([
@@ -271,7 +259,6 @@ categories: DDD
     </code>
     <p>Value Objects and encapsulation. Mmmm. "Functions should have a small number of arguments. No argument is best, followed by one, two, and three. More than three is very questionable and should be avoided with prejudice." But, what hannpes when we need more and more third party class in a static method of our value object? My question is, ... How many third party elements can I accept, and still think this object as a Value Objecr?</p>
     <code>
-        <?php
         namespace Sensorario\PugMi\ValueObjects;
 
         use Sensorario\Stuff;
