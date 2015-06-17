@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Value Objects"
-date:   2015-05-01
-categories: DDD
+date:   2015-06-22
+categories: DDD, value objects, php
 ---
 
 <div class="introduction">
