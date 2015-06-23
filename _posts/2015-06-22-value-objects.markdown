@@ -7,16 +7,6 @@ categories: ddd
 
 <style type="text/css">
 <!--
-.post pre,
-.post code {
-  border: 1px solid #d5d5e9;
-  background-color: #eef;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  font-size: 15px;
-  overflow: hidden;
-}
 pre { white-space: pre-wrap; font-family: monospace; color: #000000; font-size: 75%; }
 .lnr { color: #804000; }
 .Constant { color: #af5f00; }
@@ -86,24 +76,26 @@ pre { white-space: pre-wrap; font-family: monospace; color: #000000; font-size: 
     <p>This means that Value Object are stateless. We cannot modify a value object. Setters violate immutability.</p>
     <p>In some implementation, in other languages, setters are allowed BUT with private visiblity. In these cases basic attribute initialization is oerfirned first by invoking basic private setters.</p>
     <p>You can design a Value Object handled to one or more Entities. But is not a good idea because if Entity change, Value changes too, and this is a violation of the quality of immutability. State cannot change! Is Value Object you have disigned need state changement, consider the idea to use an Entity.</p>
-    <pre>
-    <span class="lnr"> 2 </span><span class="Type">namespace</span> Sensorario\PugMi\ValueObjects;
-    <span class="lnr"> 3 </span>
-    <span class="lnr"> 4 </span><span class="Type">final</span> <span class="Type">class</span> EmailAddress <span class="Special">{</span>
-    <span class="lnr"> 5 </span>    <span class="Comment">// we need a public constructor?</span>
-    <span class="lnr"> 6 </span>    <span class="Type">private</span> <span class="PreProc">function</span> <span class="Statement">__construct</span><span class="Special">()</span> <span class="Special">{</span>
-    <span class="lnr"> 7 </span>        <span class="Comment">// ...</span>
-    <span class="lnr"> 8 </span>    <span class="Special">}</span>
-    <span class="lnr"> 9 </span>    <span class="Comment">// named constructor</span>
-    <span class="lnr">10 </span>    <span class="Type">public</span> <span class="Type">static</span> <span class="PreProc">function</span> withDomain<span class="Special">(</span><span class="Statement">$</span><span class="Identifier">domain</span><span class="Special">)</span> <span class="Special">{</span>
-    <span class="lnr">11 </span>        <span class="Statement">return</span> <span class="PreProc">new</span> <span class="Type">self</span><span class="Special">(</span><span class="Statement">compact</span><span class="Special">(</span>'<span class="Constant">domain</span>'<span class="Special">))</span>;
-    <span class="lnr">12 </span>    <span class="Special">}</span>
-    <span class="lnr">13 </span>    <span class="Comment">// named constructor</span>
-    <span class="lnr">14 </span>    <span class="Type">public</span> <span class="Type">static</span> <span class="PreProc">function</span> withAddress<span class="Special">(</span><span class="Statement">$</span><span class="Identifier">address</span><span class="Special">)</span> <span class="Special">{</span>
-    <span class="lnr">15 </span>        <span class="Statement">return</span> <span class="PreProc">new</span> <span class="Type">self</span><span class="Special">(</span><span class="Statement">compact</span><span class="Special">(</span>'<span class="Constant">address</span>'<span class="Special">))</span>;
-    <span class="lnr">16 </span>    <span class="Special">}</span>
-    <span class="lnr">17 </span><span class="Special">}</span>
-    </pre>
+    <div class="code">
+        <pre>
+            <span class="lnr"> 2 </span><span class="Type">namespace</span> Sensorario\PugMi\ValueObjects;
+            <span class="lnr"> 3 </span>
+            <span class="lnr"> 4 </span><span class="Type">final</span> <span class="Type">class</span> EmailAddress <span class="Special">{</span>
+            <span class="lnr"> 5 </span>    <span class="Comment">// we need a public constructor?</span>
+            <span class="lnr"> 6 </span>    <span class="Type">private</span> <span class="PreProc">function</span> <span class="Statement">__construct</span><span class="Special">()</span> <span class="Special">{</span>
+            <span class="lnr"> 7 </span>        <span class="Comment">// ...</span>
+            <span class="lnr"> 8 </span>    <span class="Special">}</span>
+            <span class="lnr"> 9 </span>    <span class="Comment">// named constructor</span>
+            <span class="lnr">10 </span>    <span class="Type">public</span> <span class="Type">static</span> <span class="PreProc">function</span> withDomain<span class="Special">(</span><span class="Statement">$</span><span class="Identifier">domain</span><span class="Special">)</span> <span class="Special">{</span>
+            <span class="lnr">11 </span>        <span class="Statement">return</span> <span class="PreProc">new</span> <span class="Type">self</span><span class="Special">(</span><span class="Statement">compact</span><span class="Special">(</span>'<span class="Constant">domain</span>'<span class="Special">))</span>;
+            <span class="lnr">12 </span>    <span class="Special">}</span>
+            <span class="lnr">13 </span>    <span class="Comment">// named constructor</span>
+            <span class="lnr">14 </span>    <span class="Type">public</span> <span class="Type">static</span> <span class="PreProc">function</span> withAddress<span class="Special">(</span><span class="Statement">$</span><span class="Identifier">address</span><span class="Special">)</span> <span class="Special">{</span>
+            <span class="lnr">15 </span>        <span class="Statement">return</span> <span class="PreProc">new</span> <span class="Type">self</span><span class="Special">(</span><span class="Statement">compact</span><span class="Special">(</span>'<span class="Constant">address</span>'<span class="Special">))</span>;
+            <span class="lnr">16 </span>    <span class="Special">}</span>
+            <span class="lnr">17 </span><span class="Special">}</span>
+        </pre>
+    </div>
 </div>
 
 <div class="immutability">
