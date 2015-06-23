@@ -5,6 +5,21 @@ date:   2015-06-22
 categories: DDD, value objects, php
 ---
 
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+.lnr { color: #804000; }
+.Constant { color: #af5f00; }
+.Identifier { color: #008080; font-weight: bold; }
+.Statement { color: #804000; }
+.PreProc { color: #c000c0; }
+.Comment { color: #008080; }
+.Special { color: #c000c0; }
+.Type { color: #008000; }
+-->
+</style>
+
 <div class="introduction">
     <em>If we are talking about Value Objects, we are inside a specific context: Domainr-Driven Design. And What is Domain Driven Design? Is a way to produce quality in the software we develop. Some quality is reached by using tests avoiding delivering software with fatal number of bugs. Quality of software is reached via tests. Wuality of design could be reached with Domain-Driven Design. DDD gives you tools necessary to high-quality software. Value Objects are a vital building block of DDD.</em>
 
