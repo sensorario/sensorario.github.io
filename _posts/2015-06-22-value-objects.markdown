@@ -7,7 +7,7 @@ categories: ddd
 
 <style type="text/css">
 <!--
-pre { white-space: pre-wrap; font-family: monospace; color: #000000; font-size: 75%; }
+pre { white-space: pre-wrap; overflow: hidden; font-family: monospace; color: #000000; font-size: 75%; }
 .lnr { color: #804000; }
 .Constant { color: #af5f00; }
 .Identifier { color: #008080; font-weight: bold; }
