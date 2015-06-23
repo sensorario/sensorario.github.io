@@ -7,7 +7,17 @@ categories: ddd
 
 <style type="text/css">
 <!--
-pre { white-space: pre-wrap; overflow: hidden; font-family: monospace; color: #000000; font-size: 75%; }
+.post pre,
+.post code {
+  border: 1px solid #d5d5e9;
+  background-color: #eef;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 15px;
+  overflow: hidden;
+}
+pre { white-space: pre-wrap; font-family: monospace; color: #000000; font-size: 75%; }
 .lnr { color: #804000; }
 .Constant { color: #af5f00; }
 .Identifier { color: #008080; font-weight: bold; }
