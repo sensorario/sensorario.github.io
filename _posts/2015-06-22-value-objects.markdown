@@ -2,7 +2,7 @@
 layout: post
 title:  "Value Objects"
 date:   2015-06-22
-categories: DDD, value objects, php
+categories: ddd
 ---
 
 <style type="text/css">
