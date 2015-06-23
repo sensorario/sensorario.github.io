@@ -8,7 +8,6 @@ categories: ddd
 <style type="text/css">
 <!--
 pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
-body { font-family: monospace; color: #ffffff; background-color: #000000; }
 .lnr { color: #804000; }
 .Constant { color: #af5f00; }
 .Identifier { color: #008080; font-weight: bold; }
