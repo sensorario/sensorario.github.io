@@ -2,7 +2,7 @@
 layout: post
 title:  "Value Objects"
 date:   2015-06-22
-categories: ddd
+tags: ddd, value objects
 ---
 
 <style type="text/css">
