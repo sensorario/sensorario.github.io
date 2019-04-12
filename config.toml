@@ -1,0 +1,4 @@
+baseURL = "http://sensorario.github.io"
+languageCode = "en-us"
+title = "@sensorario's blog"
+theme = "ananke"
