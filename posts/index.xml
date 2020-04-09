@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>https://sensorario.github.io/posts/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it-IT</language>
+    <lastBuildDate>Thu, 09 Apr 2020 02:44:20 +0200</lastBuildDate>
+    
+	<atom:link href="https://sensorario.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello</title>
+      <link>https://sensorario.github.io/posts/hello/</link>
+      <pubDate>Thu, 09 Apr 2020 02:44:20 +0200</pubDate>
+      
+      <guid>https://sensorario.github.io/posts/hello/</guid>
+      <description>wedfas</description>
+    </item>
+    
+    <item>
+      <title>Mascherine</title>
+      <link>https://sensorario.github.io/posts/mascherine/</link>
+      <pubDate>Thu, 09 Apr 2020 02:44:11 +0200</pubDate>
+      
+      <guid>https://sensorario.github.io/posts/mascherine/</guid>
+      <description>.header { grid-area: header; } .main { grid-area: main; } .second { grid-area: second; } .sidebar { grid-area: sidebar; } .footer { grid-area: footer; } .container { display: grid; grid-template-columns: auto auto auto auto; grid-template-rows: auto auto; grid-template-areas: &#34;header header header header&#34; &#34;main main main sidebar&#34; &#34;second second second sidebar&#34; &#34;footer footer footer footer&#34;; }   Le mascherine. Stanno per diventare un elemento fondamentale ed obbligatorio del nostro quotidiano.</description>
+    </item>
+    
+  </channel>
+</rss>
