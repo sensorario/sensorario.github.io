@@ -6,18 +6,18 @@
     <description>Recent content in Posts on SENSORARIO&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Thu, 09 Apr 2020 02:44:11 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2020 00:37:13 +0200</lastBuildDate>
     
 	<atom:link href="https://sensorario.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Mascherine</title>
-      <link>https://sensorario.github.io/posts/mascherine/</link>
-      <pubDate>Thu, 09 Apr 2020 02:44:11 +0200</pubDate>
+      <title>Orto</title>
+      <link>https://sensorario.github.io/posts/orto/</link>
+      <pubDate>Sun, 27 Sep 2020 00:37:13 +0200</pubDate>
       
-      <guid>https://sensorario.github.io/posts/mascherine/</guid>
-      <description>.header { grid-area: header; } .main { grid-area: main; } .second { grid-area: second; } .sidebar { grid-area: sidebar; } .footer { grid-area: footer; } .container { display: grid; grid-template-columns: auto auto auto auto; grid-template-rows: auto auto; grid-template-areas: &#34;header header header header&#34; &#34;main main main sidebar&#34; &#34;second second second sidebar&#34; &#34;footer footer footer footer&#34;; }   Le mascherine. Stanno per diventare un elemento fondamentale ed obbligatorio del nostro quotidiano.</description>
+      <guid>https://sensorario.github.io/posts/orto/</guid>
+      <description>l&#39;orto Sull&#39;orto da dire di cose ce ne sono tante</description>
     </item>
     
   </channel>
